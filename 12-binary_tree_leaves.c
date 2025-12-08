@@ -7,11 +7,10 @@
  * Description: A leaf is a node with no children
  * (left == NULL && right == NULL)
  * Return: number of leaves in the tree, or 0 if tree is NULL
+ * Recrusion > return directly size_t
  */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
-	size_t leaf = 0;
-
 	if (tree == NULL)
 		return (0);
 	/* Si pas d'enfant alors leaf = 1 (node) */
