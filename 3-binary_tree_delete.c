@@ -11,15 +11,16 @@
  */
 void binary_tree_delete(binary_tree_t *tree)
 {
+	/* Si l'arbre est NULL, rien à faire */
 	if (tree == NULL)
 		return;
 
-	/* Recursively delete left subtree */
+	/* Supprimer récursivement le sous-arbre gauche */
 	binary_tree_delete(tree->left);
 
-	/* Recursively delete right subtree */
+	/* Supprimer récursivement le sous-arbre droit */
 	binary_tree_delete(tree->right);
 
-	/* Free the current node */
+	/* Libérer la mémoire du nœud actuel */
 	free(tree);
 }

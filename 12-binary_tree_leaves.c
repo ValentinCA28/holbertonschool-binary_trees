@@ -11,11 +11,12 @@
  */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
+	/* Si l'arbre est NULL, pas de feuilles */
 	if (tree == NULL)
 		return (0);
-	/* Si pas d'enfant alors leaf = 1 (node) */
+	/* Si pas d'enfant alors c'est une feuille = 1 */
 	if (tree->left == NULL && tree->right == NULL)
 		return (1);
-	/* compte les enfants de gauche et droite = total leaf per node */
+	/* Compter les feuilles dans le sous-arbre gauche et droit */
 	return (binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right));
 }

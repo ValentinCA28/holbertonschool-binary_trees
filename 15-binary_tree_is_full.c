@@ -31,8 +31,11 @@ size_t binary_tree_size(const binary_tree_t *tree)
  */
 int binary_tree_is_full(const binary_tree_t *tree)
 {
+	/* Si l'arbre est NULL, ce n'est pas un arbre complet */
 	if (tree == NULL)
 		return (0);
 
+	/* Un arbre binaire est complet si sa taille est impaire */
+	/* (chaque nœud a 0 ou 2 enfants) */
 	return (binary_tree_size(tree) % 2 == 1);
 }

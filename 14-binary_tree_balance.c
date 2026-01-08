@@ -40,14 +40,18 @@ int binary_tree_balance(const binary_tree_t *tree)
 	int height_left = 0;
 	int height_right = 0;
 
+	/* Si l'arbre est NULL, le facteur d'équilibre est 0 */
 	if (tree == NULL)
 		return (0);
 
+	/* Calculer la hauteur du sous-arbre gauche si il existe */
 	if (tree->left != NULL)
 		height_left = (int)binary_tree_height(tree->left) + 1;
 
+	/* Calculer la hauteur du sous-arbre droit si il existe */
 	if (tree->right != NULL)
 		height_right = (int)binary_tree_height(tree->right) + 1;
 
+	/* Retourner la différence (facteur d'équilibre) */
 	return (height_left - height_right);
 }

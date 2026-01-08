@@ -15,14 +15,20 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
 	binary_tree_t *new;
 
+	/* Allocation de mémoire pour le nouveau nœud */
 	new = malloc(sizeof(binary_tree_t));
 
+	/* Si l'allocation échoue, retourner NULL */
 	if (!new)
 		return (NULL);
+	/* Initialisation de la valeur du nœud */
 	new->n = value;
+	/* Liaison avec le nœud parent */
 	new->parent = parent;
+	/* Initialisation des enfants à NULL (pas d'enfants pour l'instant) */
 	new->left = NULL;
 	new->right = NULL;
 
+	/* Retourner le pointeur vers le nouveau nœud créé */
 	return (new);
 }

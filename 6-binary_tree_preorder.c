@@ -13,10 +13,14 @@
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
+	/* Si l'arbre ou la fonction est NULL, ne rien faire */
 	if (tree == NULL || func == NULL)
 		return;
 
+	/* Traiter d'abord le nœud actuel (racine) */
 	func(tree->n);
+	/* Puis parcourir le sous-arbre gauche */
 	binary_tree_preorder(tree->left, func);
+	/* Enfin parcourir le sous-arbre droit */
 	binary_tree_preorder(tree->right, func);
 }
