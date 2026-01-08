@@ -12,10 +12,14 @@
  */
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
+	/* Si l'arbre ou la fonction est NULL, ne rien faire */
 	if (tree == NULL || func == NULL)
 		return;
 
+	/* Parcourir d'abord le sous-arbre gauche */
 	binary_tree_postorder(tree->left, func);
+	/* Puis parcourir le sous-arbre droit */
 	binary_tree_postorder(tree->right, func);
+	/* Enfin traiter le nœud actuel */
 	func(tree->n);
 }

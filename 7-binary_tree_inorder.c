@@ -13,15 +13,16 @@
  */
 void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
+	/* Si l'arbre ou la fonction est NULL, ne rien faire */
 	if (tree == NULL || func == NULL)
 		return;
 
-	/* Traverse left subtree */
+	/* Parcourir d'abord le sous-arbre gauche */
 	binary_tree_inorder(tree->left, func);
 
-	/* Call function on current node */
+	/* Traiter le nœud actuel */
 	func(tree->n);
 
-	/* Traverse right subtree */
+	/* Parcourir enfin le sous-arbre droit */
 	binary_tree_inorder(tree->right, func);
 }
